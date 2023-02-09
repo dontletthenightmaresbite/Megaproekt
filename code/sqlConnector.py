@@ -5,7 +5,7 @@ import pyodbc
 
 class DataBase:
     def Connect(self):
-        connection_string='DRIVER={SQL Server};SERVER=.;DATABASE=App1'
+        connection_string='DRIVER={SQL Server};SERVER=.;DATABASE=UwU'
         connection = None
         try:
             connection = pyodbc.connect(connection_string)
