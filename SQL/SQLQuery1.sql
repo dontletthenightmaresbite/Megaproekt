@@ -85,3 +85,8 @@ GO
 ALTER TABLE [Tasks] CHECK CONSTRAINT [Tasks_fk1]
 GO
 ALTER TABLE [Tasks] WITH CHECK ADD CONSTRAINT [Tasks_fk2] FOREIGN KEY ([TeamId]) REFERENCES [Teams]([Id])
+alter table Teams alter column LeaderId int null
+
+insert Teams values ('Программисты', Null)
+Insert Posts values ('Программист',123,200)
+insert Worker values ('Олег','2','98745312',1,null)
