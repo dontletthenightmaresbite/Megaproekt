@@ -14,21 +14,21 @@ class DataBase:
             print(f"Error: '{err}'")
         self.connection = connection
 
-    def Get(self, query):
+    def Get(self, query : str):
         cursor = self.connection.cursor()
         result = None
         try:
             cursor.execute(query)
             result = cursor.fetchall()
-            print("Query successful")
         except Error as err:
+            print("Query:", query)
             print(f"Error: '{err}'")
         return result
 
-    def Do(self, query):
+    def Do(self, query : str):
         cursor = self.connection.cursor()
         try:
             cursor.execute(query)
-            print("Query successful")
         except Error as err:
+            print("Query:", query)
             print(f"Error: '{err}'")
