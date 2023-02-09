@@ -101,33 +101,38 @@ alter table Teams alter column LeaderId int null
 insert Teams values ('Программисты', Null)
 
 
-Insert Posts values ('Программист',123,200)
+Insert Posts values ('Программист',123,200),
+('Директор', 1, 1),
+('Тимлид', 24554542, 1235642),
+('Бэкендер', 65464342, 15782),
+('Дизайнерка', 25633342, 12334512),
+('Букалтерка', 42563342, 12312)
 
 
 insert Worker values ('Олег','2','98745312',1,null)
 
 insert Worker values('Пурга', '2', '233254424', 1, null)
 
-insert Worker values('Курт', '2', '233255644', 1, null)
+insert Worker values('Курт', '5', '233255644', 1, null)
 
-insert Worker values('Табис', '2', '56755644', 1, null)
+insert Worker values('Табис', '4', '56755644', 1, null)
 
-insert Worker values('Читус', '2', '989975644', 1, null)
+insert Worker values('Читус', '6', '989975644', 1, null)
 
-insert Worker values('Опиумен', '2', '43349975644', 1, null)
+insert Worker values('Опиумен', '3', '43349975644', 1, null)
 
 insert Worker values('Сундус', '2', '1234975644', 1, null)
 
-insert Worker values('Саранча', '2', '456675644', 1, null)
+insert Worker values('Саранча', '5', '456675644', 1, null)
 
-insert Worker values('Чича', '2', '456975644', 1, null)
+insert Worker values('Чича', '7', '456975644', 1, null)
 
-insert Worker values('Рудольф', '2', '3456975644', 1, null)
+insert Worker values('Рудольф', '7', '3456975644', 1, null)
 
 
 --#################################################################### PROCEDURE ####################################################################--
 
-
+delete Worker
 
 
 
