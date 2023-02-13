@@ -1,5 +1,5 @@
 --#################################################################### PLAYGROUND ####################################################################--
-
+use UwU
 
 
 --#################################################################### INSERT ####################################################################--
@@ -38,9 +38,9 @@ delete [Worker]
 create procedure GetTeamTasks
 @id int
 as
-select Teams.TeamId, Teams.[Name], Tasks.[Description] from Teams
-join Tasks on Tasks.TeamId=Teams.TeamId
-where Teams.TeamId=@Id
+select Teams.Id, Teams.[Name], Tasks.[Description] from Teams
+join Tasks on Tasks.TeamId=Teams.Id
+where Teams.Id=@Id
 order by TeamId
 
 create procedure GetWorkerOpportunities
