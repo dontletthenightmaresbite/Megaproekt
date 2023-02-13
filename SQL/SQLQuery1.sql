@@ -51,10 +51,10 @@ join [Opportunities] as O on W.post = O.PostId
 join [ListOfOpportunities] as L on L.Id = O.Opportunities
 where W.Id=@id
 
-create procedure WorkerIdNameNumberByTeamId
+create procedure GetFullInfoOfWorkerById
 @id int
 as
-select W.[Id], W.[Name], W.[PhoneNumber] from [Worker] as W
+select W.[Id], W.[Name], W.[PhoneNumber], W.[Post] from [Worker] as W
 where W.[TeamId] = @id
 
 create procedure TasksByWorkerId
