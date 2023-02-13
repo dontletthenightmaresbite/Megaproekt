@@ -32,3 +32,14 @@ class DataBase:
         except Error as err:
             print("Query:", query)
             print(f"Error: '{err}'")
+
+    def WorkerIdNameNumberByTeamId(self,TeamId):
+        cursor = self.connection.cursor()
+        query = 'exec WorkerIdNameNumberByTeamId'+str(TeamID)
+        try:
+            cursor.execute(query)
+            result = cursor.fetchall()
+        except Error as err:
+            print("Query:", query)
+            print(f"Error: '{err}'")
+        return result
