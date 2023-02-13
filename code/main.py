@@ -7,6 +7,5 @@ print(1)
 db.Connect()
 print(2)
 z=db.Do("exec GetTeamTasks 1")
+print(db.GetFullInfoOfWorkerById(16))
 
-for i in z:
-    print(i)

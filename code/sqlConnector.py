@@ -33,9 +33,9 @@ class DataBase:
             print("Query:", query)
             print(f"Error: '{err}'")
 
-    def WorkerIdNameNumberByTeamId(self,TeamId):
+    def GetFullInfoOfWorkerById(self,TeamId):
         cursor = self.connection.cursor()
-        query = 'exec WorkerIdNameNumberByTeamId'+str(TeamID)
+        query = 'exec GetFullInfoOfWorkerById' + ' ' + str(TeamId)
         try:
             cursor.execute(query)
             result = cursor.fetchall()
