@@ -1,3 +1,6 @@
+import mysql.connector
+from mysql.connector import Error
+import pyodbc
 from sqlConnector import *
 db = DataBase()
 print(1)
