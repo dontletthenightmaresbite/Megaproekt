@@ -25,6 +25,14 @@ insert Worker values
 ('Chicha', '2', '456975644', 1, null),
 ('Rudolf', '2', '3456975644', 1, null)
 
+insert Tasks values
+('Visit the job', 1, 13, '2023-02-14'),
+('Make some amazing staff', 1, 14, '2023-02-17'),
+('Do nothing', 1, 15, '2023-02-11'),
+('Print Hello World', 1, 16, '2023-02-19'),
+('Call for asking some help', 1, 17, '2023-02-17'),
+('Create the app', 1, 18, '2023-02-22')
+
 --#################################################################### DELETE ####################################################################--
 
 delete [ListOfOpportunities]
