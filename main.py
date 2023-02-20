@@ -1,11 +1,11 @@
-import mysql.connector
-from mysql.connector import Error
-import pyodbc
-from sqlConnector import *
-db = DataBase()
+from DataLogicLayer.Repository import *
 print(1)
-db.Connect()
-print(2)
-z=db.Do("exec GetTeamTasks 1")
-print(db.GetFullInfoOfWorkerById(16))
 
+db = Repository()
+
+db.insert_worker(worker("awa", 1, "89997355568", 1))
+
+a = db.get("select * from Worker")
+
+for i in a:
+    print(i)

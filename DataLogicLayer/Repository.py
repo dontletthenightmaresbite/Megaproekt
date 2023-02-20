@@ -1,5 +1,6 @@
-from ConnectionGenerator import *
-from Options import *
+from DataLogicLayer.ConnectionGenerator import *
+from DataLogicLayer.Options import *
+from DataLogicLayer.Models.imports import *
 
 class Repository:
     def __init__(self):
@@ -21,7 +22,8 @@ class Repository:
         return cursor.fetchall()
 
     def insert_worker(self, worker):
-        query = self.options.insert_worker + f" '{worker.name}', {worker.teamId}, '{worker.phoneNumber}', {worker.post}"
+        query = self.options.insert_worker + f" '{worker.name}', {worker.teamId}, \
+                                                '{worker.phoneNumber}', {worker.post}"
         self.do(query)
 
     def insert_team(self, team):
