@@ -2,7 +2,14 @@ import mysql.connector
 from mysql.connector import Error
 import pyodbc
 
+def get_connection():
+    try:
+        connectionString = 'DRIVER={SQL Server};SERVER=.;DATABASE=UwU'
+        return pyodbc.connect(connectionString)
+    except Error as err:
+        print(err)
 
+'''
 class DataBase:
     def Connect(self):
         connection_string='DRIVER={SQL Server};SERVER=.;DATABASE=UwU'
@@ -43,3 +50,4 @@ class DataBase:
             print("Query:", query)
             print(f"Error: '{err}'")
         return result
+'''
