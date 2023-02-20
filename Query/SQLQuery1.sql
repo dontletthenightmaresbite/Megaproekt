@@ -14,7 +14,7 @@ Insert Posts values ('Programmer',123,200),
 ('Accauntant', 42563342, 12312)
 
 insert Worker values 
-('Oleg','2','98745312',1,null),
+('Oleg', '2','98745312',1,null),
 ('Purga', '2', '233254424', 1, null),
 ('Curt', '2', '233255644', 1, null),
 ('Tabis', '2', '56755644', 1, null),
@@ -71,7 +71,54 @@ as
 select T.[Id], T.[Description] from [Tasks] as T
 where T.[WorkerId] = @id
 
+create procedure InsertWorker
+@name nvarchar(50),
+@teamId int NULL,
+@phoneNumber nvarchar(50),
+@post int
+as
+insert [Worker] values (@name, @teamId, @phoneNumber, @post, 0) 
 
+create procedure InsertTeam
+@name nvarchar(25),
+@leaderId int
+as
+insert [Teams] values (@name, @leaderId)
+
+create procedure UpdateWorkerTeam
+@workerId int,
+@teamId int
+as
+update [Worker] 
+set TeamId = @teamId
+where Id = @workerId
+
+create procedure InsertTask
+@description nvarchar(120),
+@workerId int,
+@deadline date
+as
+declare @teamId int
+set @teamId = (select [TeamId] from [Worker] where id=@workerId)
+insert [Tasks] values (@description, @teamId, @workerId, @deadline)
+
+create procedure UpdateTaskWorker
+@taskId int,
+@workerId int
+as
+update [Tasks]
+set TeamId = (select [TeamId] from [Worker] where id=@workerId), WorkerId = @workerId
+where Id = @taskId
+
+create procedure DeleteWorker
+@id int
+as
+update Worker
+set IsDeleted = 1
+where id = @id
+update Tasks
+set WorkerId = null, TeamId = null
+where WorkerId = @id
 
 --#################################################################### DATABASE CREATE ####################################################################--
 
