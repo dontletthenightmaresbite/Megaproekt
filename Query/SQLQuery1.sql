@@ -123,21 +123,19 @@ where WorkerId = @id
 create procedure InsertPost
 @name nvarchar(120),
 @salary int,
-@timeOfwork int
+@timeOfWork int
 as
 insert [Posts] values (@name, @salary,  @timeOfwork )
 
 create procedure InsertOpportunityInListOfOpportunities
-@discription nvarchar(120)
+@description nvarchar(120)
 as
 insert [ListOfOpportunities]  values (@discription)
 
-create procedure InsertOpportuniy
+create procedure InsertOpportunity
+@postId int,
+@opportunities int
 as
-declare @postId int
-set @postId = (select [Id] from [Posts] where id=@postId)
-declare @opportunities int
-set @opportunities = (select [Id] from [ListOfOpportunities] where id=@opportunities)
 insert [Opportunities] values (@postId, @opportunities)
 --#################################################################### DATABASE CREATE ####################################################################--
 
