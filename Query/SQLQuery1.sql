@@ -120,6 +120,25 @@ update Tasks
 set WorkerId = null, TeamId = null
 where WorkerId = @id
 
+create procedure InsertPost
+@name nvarchar(120),
+@salary int,
+@timeOfwork int
+as
+insert [Posts] values (@name, @salary,  @timeOfwork )
+
+create procedure InsertOpportunityInListOfOpportunities
+@discription nvarchar(120)
+as
+insert [ListOfOpportunities]  values (@discription)
+
+create procedure InsertOpportuniy
+as
+declare @postId int
+set @postId = (select [Id] from [Posts] where id=@postId)
+declare @opportunities int
+set @opportunities = (select [Id] from [ListOfOpportunities] where id=@opportunities)
+insert [Opportunities] values (@postId, @opportunities)
 --#################################################################### DATABASE CREATE ####################################################################--
 
 create database UwU
