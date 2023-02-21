@@ -130,7 +130,7 @@ insert [Posts] values (@name, @salary,  @timeOfwork )
 create procedure InsertOpportunityInListOfOpportunities
 @description nvarchar(120)
 as
-insert [ListOfOpportunities]  values (@discription)
+insert [ListOfOpportunities]  values (description)
 
 create procedure InsertOpportunity
 @postId int,
