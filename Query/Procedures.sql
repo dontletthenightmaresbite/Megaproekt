@@ -103,8 +103,8 @@ go
 
 create procedure InsertOpportunity
 @postId int,
-@opportunities int
+@opportunity int
 as
-insert [Opportunities] values (@postId, @opportunities)
+insert [Opportunities] values (@postId, @opportunity)
 go
 
