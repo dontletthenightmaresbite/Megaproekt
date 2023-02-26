@@ -13,4 +13,8 @@ class Options:
         self.insert_post = 'exec InsertPost'
         self.insert_opportunity = 'exec InsertOpportunity'
         self.insert_opportunity_in_list_of_opportunities = 'exec InsertOpportunityInListOfOpportunities'
-        
+        self.change_team_leader = 'exec ChangeTeamLeader'
+        self.change_worker_team = 'exec ChangeWorkerTeam'
+        self.delete_from_team = 'exec DeleteFromTeam'
+        self.change_task_description = 'exec ChangeTaskDescription'
+        self.change_task_deadline = 'exec ChangeTaskDeadline'

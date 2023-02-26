@@ -23,19 +23,19 @@ class Repository:
 
     def get_team_tasks(self, id):
         query = self.options.get_team_tasks + f" {id}"
-        self.get(query)
+        return self.get(query)
 
     def get_worker_opportunities(self, id):
         query = self.options.get_worker_opportunities + f" {id}"
-        self.get(query)
+        return self.get(query)
 
     def get_full_info_of_worker_by_id(self, id):
         query = self.options.get_full_info_of_worker_by_id + f" {id}"
-        self.get(query)
+        return self.get(query)
 
     def tasks_by_worker_id(self, id):
         query = self.options.tasks_by_worker_id + f" {id}"
-        self.get(query)
+        return self.get(query)
 
     def insert_worker(self, worker):
         query = self.options.insert_worker + f" '{worker.name}', {worker.teamId}, '{worker.phoneNumber}', {worker.post}"
@@ -71,4 +71,24 @@ class Repository:
 
     def insert_opportunity_in_list_of_opportunities(self, description):
         query = self.options.insert_opportunity_in_list_of_opportunities + f" {description}"
+        self.do(query)
+
+    def change_team_leader(self, teamId, leaderId):
+        query = self.options.change_team_leader + f" {teamId}, {leaderId}"
+        self.do(query)
+    
+    def change_worker_team(self, workerId, teamId):
+        query = self.options.change_worker_team + f" {workerId}, {teamId}"
+        self.do(query)
+
+    def delete_from_team(self, workerId):
+        query = self.options.delete_from_team + f" {workerId}"
+        self.do(query)
+
+    def change_task_description(self, taskId, desc):
+        query = self.options.change_task_description + f" {taskId}, '{desc}'"
+        self.do(query)
+
+    def change_task_deadline(self, taskId, deadline):
+        query = self.options.change_task_deadline + f" {taskId}, '{deadline}'"
         self.do(query)

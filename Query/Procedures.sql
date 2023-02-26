@@ -42,10 +42,9 @@ insert [Worker] values (@name, @teamId, @phoneNumber, @post, 0)
 go
 
 create procedure InsertTeam
-@name nvarchar(25),
-@leaderId int
+@name nvarchar(25)
 as
-insert [Teams] values (@name, @leaderId)
+insert [Teams] values (@name, null)
 go
 
 create procedure UpdateWorkerTeam
@@ -106,5 +105,61 @@ create procedure InsertOpportunity
 @opportunity int
 as
 insert [Opportunities] values (@postId, @opportunity)
+go
+
+create procedure ChangeTeamLeader
+@teamId int,
+@workerId int
+as
+update [Teams]
+set LeaderId = null
+where LeaderId = @workerId
+update [Worker]
+set TeamId = @teamId
+where id = @workerId
+update [Teams]
+set LeaderId = @workerId
+where id = @teamId
+go
+
+create procedure ChangeWorkerTeam
+@workerId int,
+@teamId int
+as
+update [Teams]
+set LeaderId = null
+where LeaderId = @workerId and not (Id = @teamId)
+update [Worker]
+set TeamId = @teamId
+where Id = @workerId
+go
+
+create procedure DeleteFromTeam
+@id int
+as
+update [Teams]
+set LeaderId = null
+where LeaderId = @id
+update [Worker]
+set TeamId = null
+where id = @id
+go
+
+create procedure ChangeTaskDescription
+@taskId int,
+@desc nvarchar(120)
+as
+update [Tasks]
+set Description = @desc
+where Id = @taskId
+go
+
+create procedure ChangeTaskDeadline
+@taskId int,
+@deadline date
+as
+update [Tasks]
+set Deadline = @deadline
+where Id = @taskId
 go
 
