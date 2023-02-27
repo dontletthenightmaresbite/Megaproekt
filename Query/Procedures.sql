@@ -86,6 +86,17 @@ set WorkerId = null, TeamId = null
 where WorkerId = @id
 go
 
+create procedure DeletePost
+@id int
+as
+update Posts
+set IsDeleted = 1
+where Id = @id
+update Worker
+set Post = null
+where Post = @id
+go
+
 create procedure InsertPost
 @name nvarchar(120),
 @salary int,

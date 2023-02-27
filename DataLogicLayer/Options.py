@@ -13,6 +13,7 @@ class Options:
         self.get_full_info_of_worker_by_id = 'exec GetFullInfoOfWorkerById'
         self.tasks_by_worker_id = 'exec TasksByWorkerId'
         #ChangeAbob
+        self.delete_post = 'exec DeletePost'
         self.update_worker_team = 'exec UpdateWorkerTeam'
         self.update_task_worker = 'exec UpdateTaskWorker'
         self.delete_worker = 'exec DeleteWorker'
