@@ -12,7 +12,7 @@ class Options:
         self.get_worker_opportunities = 'exec GetWorkerOpportunities'
         self.get_full_info_of_worker_by_id = 'exec GetFullInfoOfWorkerById'
         self.tasks_by_worker_id = 'exec TasksByWorkerId'
-        #ChangeAboba
+        #ChangeAbob
         self.update_worker_team = 'exec UpdateWorkerTeam'
         self.update_task_worker = 'exec UpdateTaskWorker'
         self.delete_worker = 'exec DeleteWorker'
