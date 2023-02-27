@@ -1,7 +1,7 @@
 from DataLogicLayer.ConnectionGenerator import *
 from DataLogicLayer.Options import *
 from DataLogicLayer.Models.imports import *
-from DataLogicLayer.Models.Repository import*
+from DataLogicLayer.Repository import*
 
 class WorkerRepository(Repository):
 
