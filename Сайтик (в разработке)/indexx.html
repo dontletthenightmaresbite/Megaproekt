@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="import" href="test.html">
+    <title>Сайтик ура</title>
+</head>
+<body>
+    <div class="wrapper">
+        <main class="main">
+            <div class="task">
+                <div class="desc">Маленькое описание задачи</div>
+                <div class="deadline">Дедлайн</div>
+            </div>
+            <div class="task">
+                <div class="desc">Большое описание задачи ааааааааааа ааааааааааааааааааааааааааааааааааааааааааааааааа 
+                    ааааааааааааааааааааааааааааааааааааааааа аааааааааааааааааааааааааааааааааааааааааааааааааааа 
+                    аааааааааааааааааааааааааааааааааааааааа 
+                    аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа 
+                    ааааааааааа ааааааааааааааааааааааааааааааааааааааааааааааааа 
+                    ааааааааааааааааааааааааааааааааааааааааа аааааааааааааааааааааааааааааааааааааааааааааааааааа 
+                    аааааааааааааааааааааааааааааааааааааааа 
+                    аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа</div>
+                <div class="deadline">Дедлайн</div>
+            </div>
+        </main>
+        <footer>
+            <div class="navbar">
+                <div class="selector left"><a class="textt" href="https://google.com">ГЛАВНАЯ</a></div>
+                <div class="selector"><a>ЗАДАЧИ</a></div>
+                <div class="selector"><a>КОМАНДА</a></div>
+                <div class="selector right"><a>ПРОФИЛЬ</a></div>
+            </div>
+        </footer>
+    </div>
+    <div id ="intro-dm"></div> 
+    <script>
+        var link = document.querySelector('link[rel=import]');
+        var content = link.import.querySelector('.container');
+        document.body.appendChild(content.cloneNode(true));
+      </script>
+</body>
+</html>

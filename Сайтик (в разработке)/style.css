@@ -1,0 +1,108 @@
+:root {
+  --button-text-color: rgb(20, 223, 98);
+  --button-text-color-hover: rgb(88, 145, 110);
+
+}
+
+* {
+  margin:0px;
+  padding: 0px;
+}
+
+.menu {
+  height: 8%;
+  position:fixed;
+  bottom:0;
+  background-color: rgb(189, 100, 100);
+  width:100%;
+  align-content: center;
+}
+
+ul {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  background-color: bisque;
+  margin: auto;
+  
+}
+
+ul .button {
+  background-color: aqua;
+  height: 100%;
+  margin:auto;
+  padding: auto;
+  width: 15%;
+  text-align: center;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.button {
+  color: var(--button-text-color);
+}
+.button:link {
+  text-decoration: none;
+}
+.button:visited {
+  color:var(--button-text-color);
+}
+.button:hover {
+  transition-duration: 300ms;
+  color: var(--button-text-color-hover);
+}
+
+.bi {
+  font-size: 200%;
+  margin-top: 10px;
+}
+
+h4 {margin:0}
+
+@media (max-width: 1281px) {
+  .button-text {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 720px) {
+  .button-text {
+    display: none;
+  }
+  ul {
+    width: 100%;
+  }
+  ul .button {
+    font-size: 200%;
+    width: 20%;
+  }
+
+}
+/*
+.wrap {
+  display: flex;
+  width:50%;
+  height: 100%;
+  margin: 0px auto 0px auto;
+  background-color: aqua;
+  justify-content: center;
+}
+.bttn-text {
+   text-decoration: none; 
+}
+.bttn {
+  padding: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
+  height: 90%;
+  width: 15%;
+  margin: auto auto auto auto;
+  text-align: center;
+  border-radius: 25px;
+}*/
