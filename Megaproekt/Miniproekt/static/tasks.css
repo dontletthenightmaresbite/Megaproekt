@@ -2,9 +2,10 @@
     --task-bg-color: rgb(189, 19, 204);
 }
 
-body {
+/* body {
     height: 100vh;
-}
+    width: 100vw;
+} */
 
 .tasks-wrapper {
     background-color: aqua;
@@ -14,7 +15,13 @@ body {
     margin: 0 auto 0 auto;
     padding-top: 1%;
     overflow-y: auto;
-    height: 90%;
+    /* height: 92svh; */
+}
+
+.empty {
+    text-align: center;
+    background-color: rgb(8, 255, 28);
+    padding: auto;
 }
 
 .task {
@@ -23,9 +30,11 @@ body {
     border-radius: 1vh;
     background-color: var(--task-bg-color);
 }
+
 .desc, .deadline {
     font-size: 2vh;
 }
+
 .desc {
     margin-top: 1%;
     white-space: break-word;
@@ -39,3 +48,15 @@ body {
     margin-bottom: 1%;
     margin-right: 2%;
 }
+
+@media (max-width: 1281px) {
+    .tasks-wrapper {
+        width: 90%;
+    }
+  
+  }
+  
+  @media (max-width: 720px) {
+  
+    
+  }

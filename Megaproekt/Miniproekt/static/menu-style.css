@@ -11,6 +11,7 @@
 }
 
 .menu {
+  margin:0px;
   height: 8%;
   position:fixed;
   bottom:0;
