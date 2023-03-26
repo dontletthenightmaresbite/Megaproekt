@@ -1,0 +1,128 @@
+:root {
+  --button-text-color: rgb(20, 223, 98);
+  --button-text-color-hover: rgb(88, 145, 110);
+  --button-text-color-active: rgb(0, 0, 0);
+  --menu-color: rgb(189, 100, 100);
+}
+
+* {
+  margin:0px;
+  padding: 0px;
+}
+
+.menu {
+  height: 8%;
+  position:fixed;
+  bottom:0;
+  background-color: var(--menu-color);
+  width:100%;
+  align-content: center;
+}
+
+.menu ul {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--menu-color);
+  margin: auto;
+  
+}
+
+.menu ul .button {
+  background-color: var(--menu-color);
+  height: 100%;
+  margin:auto;
+  padding: auto;
+  width:20%;
+  text-align: center;
+}
+
+.menu li {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.menu .button {
+  color: var(--button-text-color);
+}
+.menu .button:link {
+  text-decoration: none;
+}
+.menu .button:visited {
+  color:var(--button-text-color);
+}
+.menu .button:hover {
+  transition-duration: 300ms;
+  color: var(--button-text-color-hover);
+}
+
+.menu .bi {
+  font-size: 3vh;
+  margin-top: 0.8vh;
+}
+
+.menu .button-text {
+  margin:0;
+  font-size: 2vh;
+}
+
+.active .bi, .active .button-text{
+  color: var(--button-text-color-active);
+}
+
+@media (max-width: 1281px) {
+  .menu .button-text {
+    visibility: hidden;
+  }
+  .menu ul {
+    width: 100%;
+  }
+  .menu .bi {
+    font-size: 5vh;
+    margin: 0.5vh;
+  }
+
+}
+
+@media (max-width: 720px) {
+  
+  .menu .button-text {
+    display: none;
+  }
+  .menu ul {
+    width: 100%;
+  }
+  .menu ul .button {
+    width: 20%;
+  }
+  .menu .bi {
+    font-size: 5vh;
+    margin: 0.5vh;
+  }
+
+}
+/*
+.wrap {
+  display: flex;
+  width:50%;
+  height: 100%;
+  margin: 0px auto 0px auto;
+  background-color: aqua;
+  justify-content: center;
+}
+.bttn-text {
+   text-decoration: none; 
+}
+.bttn {
+  padding: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
+  height: 90%;
+  width: 15%;
+  margin: auto auto auto auto;
+  text-align: center;
+  border-radius: 25px;
+}*/

@@ -1,0 +1,41 @@
+:root {
+    --task-bg-color: rgb(189, 19, 204);
+}
+
+body {
+    height: 100vh;
+}
+
+.tasks-wrapper {
+    background-color: aqua;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0 auto;
+    padding-top: 1%;
+    overflow-y: auto;
+    height: 90%;
+}
+
+.task {
+    display: block;
+    margin: 0 1% 1% 1%;
+    border-radius: 1vh;
+    background-color: var(--task-bg-color);
+}
+.desc, .deadline {
+    font-size: 2vh;
+}
+.desc {
+    margin-top: 1%;
+    white-space: break-word;
+    margin-left: 2%;
+    width: 96%;
+    margin-right: 2%;
+}
+
+.deadline {
+    text-align: right;
+    margin-bottom: 1%;
+    margin-right: 2%;
+}

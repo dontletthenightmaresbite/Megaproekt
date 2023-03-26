@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="
+https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.min.css
+" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/bootstrap-theme.css"> -->
+    <link rel="stylesheet" href="{% static "menu-style.css" %}">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+  
+    <div class="menu">
+      <ul>
+        <a href="/main" class="button main active"><li>
+          <i class="bi bi-house-door-fill"></i><span class="button-text">ГЛАВНАЯ</span>
+        </li></a>
+        <a href="/tasks" class="button tasks"><li>
+          <i class="bi bi-list-check"></i><span class="button-text">ЗАДАЧИ</span>
+        </li></a>
+        <a href="/team" class="button team"><li>
+          <i class="bi bi-people-fill"></i><span class="button-text">КОМАНДА</span>
+        </li></a>
+        <a href="/me" class="button me"><li>
+          <i class="bi bi-person-lines-fill"></i><span class="button-text">ПРОФИЛЬ</span>
+        </li></a>
+      </ul>
+    </div>
+
+    <script>
+      const list = document.querySelectorAll('.button');
+      function activeLink(){
+        list.forEach((item) => item.classList.remove('active'));
+        this.classList.add('active');
+      }
+      list.forEach((item) => 
+      item.addEventListener('click', activeLink));
+    </script>
+</body>
+</html>
