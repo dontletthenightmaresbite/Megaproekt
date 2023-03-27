@@ -1,34 +1,56 @@
 :root {
-    --task-bg-color: rgb(189, 19, 204);
+    --task-bg-color: rgba(64, 64, 64, 1);
+    --accent-color: rgba(218, 198, 24, 1);
 }
 
-/* body {
-    height: 100vh;
-    width: 100vw;
-} */
-
+/* Не доделал */
 .tasks-wrapper {
-    background-color: aqua;
+    margin: auto;
+    /* background-color: rgb(96, 148, 148); */
     width: 60%;
     display: flex;
     flex-direction: column;
-    margin: 0 auto 0 auto;
-    padding-top: 1%;
     overflow-y: auto;
-    /* height: 92svh; */
+    padding-top: 1%;
+    height: auto;
+    max-height: 92svh;
+    /* scrollbar-color: aqua; */
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 90%;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(124, 124, 124, 0); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(124, 124, 124, 0.651); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 124, 124, 0.9);
 }
 
 .empty {
     text-align: center;
-    background-color: rgb(8, 255, 28);
+    background-color: rgb(2, 19, 3);
     padding: auto;
 }
 
 .task {
+    box-shadow: 0px 0px 5px rgba(255,255,255,0.3);
     display: block;
     margin: 0 1% 1% 1%;
     border-radius: 1vh;
     background-color: var(--task-bg-color);
+    transition-duration: 800ms;
+}
+.task:hover {
+    box-shadow: 0px 0px 15px var(--accent-color);
+    transition-duration: 700ms;
 }
 
 .desc, .deadline {
@@ -51,12 +73,14 @@
 
 @media (max-width: 1281px) {
     .tasks-wrapper {
-        width: 90%;
+        width: 80%;
     }
   
-  }
+}
   
-  @media (max-width: 720px) {
-  
+@media (max-width: 720px) {
+    .tasks-wrapper {
+        width: 100%;
+    }
     
-  }
+}

@@ -10,7 +10,7 @@ def tasks(request):
         def __init__(self, desc, dl):
             self.desc = desc
             self.deadline = dl
-    data = {"data":[]}
+    data = {"data":[task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('afffffa',132)]}
     return render(request, 'Miniproekt/tasks.html', data)
 
 def team(request):
