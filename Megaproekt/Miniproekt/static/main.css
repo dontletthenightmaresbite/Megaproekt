@@ -9,10 +9,15 @@
 }
 .beginning-button{
     margin-left: 40%;
-    height: 40%;
-    width:20%;
+    height: 500px;
+    width: 500px;
     background-color: #FFFFFF;
     border-radius: 25px;
+    display:flex;
+}
+.beginning-button span{
+    margin:auto;
+    color: black;
 }
 .salary {
     margin-top: 3%;
@@ -31,8 +36,6 @@
     flex-direction: column;
     overflow-y: auto;
     padding-top: 1%;
-    height: auto;
-    max-height: 92vh;
 }
 
 .duties-wrapper:hover {
