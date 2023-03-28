@@ -13,9 +13,13 @@ https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.min.css
     <title>Home, sweet home</title>
 </head>
 <body>
-    <div class="duties-wrapper">
+    <div class = "beginning-button"><span style="color: black">Начать работу</span> </div>
 
-      {% for i in data %}
+
+    <div class="salary">{{salary}} <span style ="color: yellow">₽</span> <br /><span style ="font-size: 25px; color: #808080">Ожидаемая зарплата</span></div>
+    <div class="duties-wrapper">
+      <div class = "headline">{{post}}</div>
+      {% for i in duties %}
       <div class="duty">
         <div class="desc">{{i.desc}}</div>
       </div>
