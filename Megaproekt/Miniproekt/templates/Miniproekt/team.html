@@ -8,6 +8,7 @@
 https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.min.css
 " rel="stylesheet">
     <!-- <link rel="stylesheet" href="css/bootstrap-theme.css"> -->
+    <link rel="stylesheet" href="{% static "team.css" %}">
     <link rel="stylesheet" href="{% static "menu-style.css" %}">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,28 @@ https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.min.css
     <title>Document</title>
 </head>
 <body>
-КОМАНДА
+  <div class="team-wrapper">
+    <div class="team-block">
+      <div class="team-name">{{team.name}}</div>
+      <div class="team-main-task">{{team.mainTask}}</div>
+    </div>
+
+    <div class="worker-block">
+      {% for person in workers %}
+      <div class="worker">
+        <i class="bi bi-person-circle"></i>
+        <span class="name">{{person.name}}</span>
+        {% if person.isLeader %}
+          <span class="leader">Лидер</span>
+        {% endif %}
+        <a href="https://t.me/{{person.phoneNumber}}" target="_blank" rel="noopener noreferrer" class="bi bi-telegram"></a>
+        <a href="#" class="bi bi-envelope-fill"></a>
+        <a href="#" class="bi bi-telephone-fill"></a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  
 
 
 

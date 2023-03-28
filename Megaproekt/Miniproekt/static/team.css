@@ -1,0 +1,125 @@
+:root {
+    --worker-bg-color: rgba(64, 64, 64, 1);
+    --accent-color: rgba(218, 198, 24, 1);
+    --button-text-color: rgba(151, 151, 151, 1);
+    --button-text-color-hover: rgb(180, 180, 180);
+    --button-text-color-active: rgba(255, 255, 255, 1);
+    --task-bg-color: rgba(64, 64, 64, 1);
+}
+
+* {
+    font-size: 2vh;
+}
+
+.team-wrapper {
+    width: 60%;
+    margin: auto;
+    background-color: rgba(0, 255, 255, 0);
+    height: 100%;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.team-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+
+.team-name {
+    margin: 2vh auto 0px auto;
+    font-size: 3vh;
+}
+
+.team-main-task {
+    width: 40%;
+    background-color: var(--task-bg-color);
+    box-shadow: 0px 0px 10px var(--button-text-color-hover);
+    border-radius: 2vh;
+    margin:15px auto 0px auto;
+    padding: 12px;
+}
+
+.bi-person-circle, .bi-telegram, .bi-telephone-fill, .bi-envelope-fill {
+    align-self: center;
+    margin-right: 10px;
+    font-size: 3.5vh;
+}
+
+.bi-telegram {
+    margin-left: auto;
+}
+
+.worker {
+    display: flex;
+    background-color: var(--worker-bg-color);
+    height: 8svh;
+    padding-right: 1px;
+    padding-left: 1%;
+    width: 45%;
+    margin: 5px auto 5px auto;
+    border-radius: 1vh;
+    border-bottom: 2px solid;
+    border-bottom-color: var(--accent-color);
+}
+
+.name {
+    margin: auto 0px auto 0px;
+    font-size: 2.5vh;
+}
+
+.leader {
+    align-self:center;
+    font-size: 1.5vh;
+    text-shadow: 0px 0px 10px var(--accent-color);
+    margin: 0px 0px 0px 5px;
+    /* padding: auto 2px auto 2px; */
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 5px;
+    height: 35%;
+    text-align: center;
+    align-items: center;
+}
+
+a.bi {
+    color: var(--button-text-color);
+    transition-duration: 300ms;
+}
+a.bi:link {
+    text-decoration: none;
+}
+a.bi:visited {
+    color:var(--button-text-color);
+}
+a.bi:hover {
+    transition-duration: 300ms;
+    color: var(--button-text-color-active);
+}
+
+@media (max-width: 1450px) {
+    .team-wrapper {
+        width: 80%;
+        padding-left: auto;
+        padding-right: auto;
+    }
+    .team-block {
+        width: 60%;
+        margin: auto auto 20px auto;
+    }
+    .team-main-task {
+        width: 80%;
+    }
+    .worker {
+        width: 80%;
+        
+    }
+  
+}
+  
+@media (orientation: portrait) {
+    .team-wrapper {
+        width: 100%;
+    }
+    
+}

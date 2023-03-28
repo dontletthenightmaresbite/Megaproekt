@@ -15,9 +15,28 @@
 }
 
 body {
-  height: 100svh;
+  height: 100vh;
+  /* height:100svh; */
   background: linear-gradient(to bottom, var(--gradient-light), var(--gradient-dark));
   color: var(--main-text-color);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 90%;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 0, 0,0); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 124, 124, 0.651); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 124, 124, 0.9);
 }
 
 .menu {
@@ -68,7 +87,7 @@ body {
 }
 .menu .button:hover {
   transition-duration: 300ms;
-  color: var(--button-text-color-hover);
+  color: var(--button-text-color-active);
 }
 
 .menu .bi {

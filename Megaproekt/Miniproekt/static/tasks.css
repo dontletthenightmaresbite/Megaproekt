@@ -3,10 +3,8 @@
     --accent-color: rgba(218, 198, 24, 1);
 }
 
-/* Не доделал */
 .tasks-wrapper {
     margin: auto;
-    /* background-color: rgb(96, 148, 148); */
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -14,30 +12,21 @@
     padding-top: 1%;
     height: auto;
     max-height: 92svh;
-    /* scrollbar-color: aqua; */
-}
-::-webkit-scrollbar {
-    width: 5px;
-    height: 90%;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(124, 124, 124, 0); 
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(124, 124, 124, 0.651); 
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(124, 124, 124, 0.9);
 }
 
 .empty {
+    width: 40%;
+    font-size: 3vh;
+    height: 10svh;
+    margin: auto auto 20px auto;
     text-align: center;
-    background-color: rgb(2, 19, 3);
-    padding: auto;
+    border-radius: 2vh;
+    background-color: var(--task-bg-color);
+    box-shadow: 0px 0px 10px var(--button-text-color-hover);
+}
+
+.empty-text {
+    margin: 2.5svh auto auto auto;
 }
 
 .task {
@@ -70,17 +59,20 @@
     margin-bottom: 1%;
     margin-right: 2%;
 }
-
-@media (max-width: 1281px) {
+@media (orientation: portrait) {
     .tasks-wrapper {
-        width: 80%;
+        width: 90%;
     }
-  
-}
-  
-@media (max-width: 720px) {
-    .tasks-wrapper {
-        width: 100%;
+    .empty {
+        width: 60%;
     }
     
 }
+
+@media (orientation: landscape) and (max-width: 1281px) {
+    .tasks-wrapper {
+        width: 80%;
+    }
+    
+}
+  
