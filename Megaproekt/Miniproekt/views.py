@@ -22,4 +22,9 @@ def team(request):
     return render(request, 'Miniproekt/team.html', )
 
 def me(request):
-    return render(request, 'Miniproekt/me.html')
+    class field:
+        def __init__(self, inf):
+            self.inf = inf
+    data = {"data":[field('Имя'), field('Фамилия'), field('worker@gmail.com'), field('+7(952)356789')]}
+
+    return render(request, 'Miniproekt/me.html', data)
