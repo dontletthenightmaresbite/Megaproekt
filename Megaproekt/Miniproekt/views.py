@@ -3,7 +3,12 @@ from django.shortcuts import render
 # Create your views here.
 
 def main(request):
-    return render(request, 'Miniproekt/main.html')
+    class duty:
+        def __init__(self, desc):
+            self.desc = desc
+    data = {"data":[duty('Писать хороший код'), duty("Не писать плохой код"), duty("Не игнорировать беседу проекта")]}
+    return render(request, 'Miniproekt/main.html',data)
+
 
 def tasks(request):
     class task:
