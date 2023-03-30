@@ -6,7 +6,7 @@ def main(request):
     class duty:
         def __init__(self, desc):
             self.desc = desc
-    data = {"data":[duty('Писать хороший код'), duty("Не писать плохой код"), duty("Не игнорировать беседу проекта")]}
+    data = {"duties":[duty('Писать хороший код'), duty("Не писать плохой код"), duty("Не игнорировать беседу проекта"),duty("Слушать максима")],"post":"Программист","salary":"85000"}
     return render(request, 'Miniproekt/main.html',data)
 
 
