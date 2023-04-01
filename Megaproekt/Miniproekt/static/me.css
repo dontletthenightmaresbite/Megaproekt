@@ -3,7 +3,7 @@
     width: 60%;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     padding-top: 1%;
     height: auto;
     max-height: 92svh;
@@ -12,19 +12,18 @@
 
 
 }
-
 .field-wrapper {
     margin: 10% auto;
     margin-top: 0;
     width: 30%;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     padding-top: 1%;
     height: auto;
     max-height: 92svh;
-
-
+    
+    
 }
 .empty {
     text-align: center;
@@ -52,7 +51,24 @@
 .inf {
     vertical-align: middle;
     text-align: center;
-    white-space: ;
+    /* white-space: ; */
     width: 100 pt;
+    
+}
 
-
+.logout-wraper {
+    position: fixed;
+    width: 15vw;
+    height: 3vw;
+    margin: 2vh;
+    top:0;
+    right:0;
+    font-size: 2vh;
+}
+.logout {
+    /* display: block; */
+    list-style: none;
+    height:100%;
+    background-color: aqua;
+    
+}

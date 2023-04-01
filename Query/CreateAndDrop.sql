@@ -12,8 +12,8 @@ CREATE TABLE [Worker] (
 	TeamId int NULL,
 	PhoneNumber nvarchar(50),
 	Post int NOT NULL,
-	IsDeleted bit
-
+	IsDeleted bit,
+	Password nvarchar(15)
 )
 GO
 CREATE TABLE [Posts] (

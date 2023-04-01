@@ -1,4 +1,5 @@
 --#################################################################### PROCEDURES ####################################################################--
+use UwU
 
 create procedure GetTeamTasks
 @id int
@@ -21,8 +22,8 @@ go
 create procedure GetFullInfoOfWorkerById
 @id int
 as
-select W.[Id], W.[Name], W.[PhoneNumber], W.[Post] from [Worker] as W
-where W.[TeamId] = @id
+select * from [Worker] as W
+where W.[Id] = @id
 go
 
 create procedure TasksByWorkerId
@@ -38,7 +39,7 @@ create procedure InsertWorker
 @phoneNumber nvarchar(50),
 @post int
 as
-insert [Worker] values (@name, @teamId, @phoneNumber, @post, 0) 
+insert [Worker] values (@name, @teamId, @phoneNumber, @post, 0, @phoneNumber) 
 go
 
 create procedure InsertTeam
@@ -95,14 +96,6 @@ where Id = @id
 update Worker
 set Post = null
 where Post = @id
-go
-
-create procedure InsertPost
-@name nvarchar(120),
-@salary int,
-@timeOfWork int
-as
-insert [Posts] values (@name, @salary,  @timeOfWork )
 go
 
 create procedure InsertOpportunityInListOfOpportunities
@@ -174,3 +167,32 @@ set Deadline = @deadline
 where Id = @taskId
 go
 
+create procedure InsertPost
+@name nvarchar(50),
+@salary int,
+@timeOfWork int
+as
+insert [Posts] values (@name, @salary, @timeOfWork)
+go
+
+create procedure WorkerPasswordAndIdByPhoneNumber
+@phoneNumber nvarchar(50)
+as
+select Id, Password from Worker
+where PhoneNumber = @phoneNumber
+go
+
+create procedure UpdateWorkerPassword
+@phoneNumber nvarchar(50),
+@password nvarchar(15)
+as
+update Worker
+set Password=@password
+where PhoneNumber=@phoneNumber
+go
+
+create procedure IsLeader
+@id int
+as
+select * from Teams where LeaderId=@id
+go

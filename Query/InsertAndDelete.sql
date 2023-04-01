@@ -32,6 +32,21 @@ insert Tasks values
 ('Call for asking some help', 1, 17, '2023-02-17'),
 ('Create the app', 1, 18, '2023-02-22')
 
+exec InsertTeam 'Программисты'
+exec InsertTeam 'Дизайнеры'
+
+exec InsertPost 'Директор', 90000, 8
+exec InsertPost 'Тимлид', 60000, 8
+exec InsertPost 'Дизайнер', 50000, 8
+exec InsertPost 'Программист', 50000, 8
+
+exec InsertWorker 'Director', null, '+79211111111', 1
+exec InsertWorker 'Leader', 1, '+79212222222', 2
+exec InsertWorker 'Diz1', 1, '+79213333333', 3
+exec InsertWorker 'Diz2', 1, '+79214444444', 3
+exec InsertWorker 'Prog1', 1, '+79215555555', 4
+
+
 --#################################################################### DELETE ####################################################################--
 
 delete [ListOfOpportunities]

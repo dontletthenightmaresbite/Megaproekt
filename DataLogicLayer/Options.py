@@ -12,6 +12,8 @@ class Options:
         self.get_worker_opportunities = 'exec GetWorkerOpportunities'
         self.get_full_info_of_worker_by_id = 'exec GetFullInfoOfWorkerById'
         self.tasks_by_worker_id = 'exec TasksByWorkerId'
+        self.worker_password_and_id_by_phone_number = 'exec WorkerPasswordAndIdByPhoneNumber'
+        self.is_leader = 'exec IsLeader'
         #ChangeAbob
         self.delete_post = 'exec DeletePost'
         self.update_worker_team = 'exec UpdateWorkerTeam'
@@ -22,3 +24,4 @@ class Options:
         self.delete_from_team = 'exec DeleteFromTeam'
         self.change_task_description = 'exec ChangeTaskDescription'
         self.change_task_deadline = 'exec ChangeTaskDeadline'
+        self.update_worker_password = 'exec UpdateWorkerPassword'

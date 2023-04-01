@@ -10,7 +10,6 @@
 https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.min.css
 " rel="stylesheet">
     <!-- <link rel="stylesheet" href="css/bootstrap-theme.css"> -->
-    <link rel="stylesheet" href="{% static "menu-style.css" %}">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -18,11 +17,19 @@ https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.min.css
 </head>
 <body>
     <h1 class="h1">Основная информация</h1>
+    {{us}}
+    <div class="logout-wraper">
+    <ul class="logout">
+      <a href="/logout" class="logout"><li class="logout">
+        <i class="bi bi-box-arrow-right"></i><span class="logout">LOGOUT</span>
+      </li></a>
+    </ul>
+  </div>
     <div class="field-wrapper">
 
       {% for i in data %}
       <div class="field">
-        <div class="inf">{{i.inf}}</div>
+        <div class="inf">{{i}}</div>
       </div>
       {% empty %}
       <div class="empty"></div>
