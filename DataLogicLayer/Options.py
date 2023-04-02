@@ -14,6 +14,7 @@ class Options:
         self.tasks_by_worker_id = 'exec TasksByWorkerId'
         self.worker_password_and_id_by_phone_number = 'exec WorkerPasswordAndIdByPhoneNumber'
         self.is_leader = 'exec IsLeader'
+        self.team_name_and_members_by_worker_id = 'exec TeamNameAndMembersByWorkerId'
         #ChangeAbob
         self.delete_post = 'exec DeletePost'
         self.update_worker_team = 'exec UpdateWorkerTeam'

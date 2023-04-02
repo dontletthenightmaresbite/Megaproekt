@@ -11,6 +11,7 @@ CREATE TABLE [Worker] (
 	Name nvarchar(50),
 	TeamId int NULL,
 	PhoneNumber nvarchar(50),
+	Email nvarchar(50),
 	Post int NOT NULL,
 	IsDeleted bit,
 	Password nvarchar(15)

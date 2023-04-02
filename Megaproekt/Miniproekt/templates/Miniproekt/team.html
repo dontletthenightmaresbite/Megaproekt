@@ -10,29 +10,29 @@ https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.min.css
     <!-- <link rel="stylesheet" href="css/bootstrap-theme.css"> -->
     <link rel="stylesheet" href="{% static "team.css" %}">
     <link rel="stylesheet" href="{% static "menu-style.css" %}">
-    
+    <link rel="icon" type="image/x-icon" href="{% static "icons/people-fill.svg" %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Document</title>
+    <title>Команда</title>
 </head>
 <body>
   <div class="team-wrapper">
     <div class="team-block">
-      <div class="team-name">{{team.name}}</div>
-      <div class="team-main-task">{{team.mainTask}}</div>
+      <div class="team-name">{{teamName}}</div>
+      <!-- <div class="team-main-task">{{team.mainTask}}</div> -->
     </div>
 
     <div class="worker-block">
-      {% for person in workers %}
+      {% for person in members %}
       <div class="worker">
         <i class="bi bi-person-circle"></i>
-        <span class="name">{{person.name}}</span>
-        {% if person.isLeader %}
+        <span class="name">{{person.Name}}</span>
+        {% if person.LeaderId %}
           <span class="leader">Лидер</span>
         {% endif %}
-        <a href="https://t.me/{{person.phoneNumber}}" target="_blank" rel="noopener noreferrer" class="bi bi-telegram"></a>
-        <a href="#" class="bi bi-envelope-fill"></a>
-        <a href="#" class="bi bi-telephone-fill"></a>
+        <a href="https://t.me/{{person.PhoneNumber}}" target="_blank" rel="noopener noreferrer" class="bi bi-telegram"></a>
+        <a href="mailto:{{person.Email}}" target="_blank" class="bi bi-envelope-fill"></a>
+        <a href="tel:person.PhoneNumber" class="bi bi-telephone-fill"></a>
       </div>
       {% endfor %}
     </div>
@@ -59,5 +59,6 @@ https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.min.css
         </li></a>
       </ul>
     </div>
+    
 </body>
 </html>

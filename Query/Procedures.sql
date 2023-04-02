@@ -37,9 +37,10 @@ create procedure InsertWorker
 @name nvarchar(50),
 @teamId int NULL,
 @phoneNumber nvarchar(50),
+@email nvarchar(50),
 @post int
 as
-insert [Worker] values (@name, @teamId, @phoneNumber, @post, 0, @phoneNumber) 
+insert [Worker] values (@name, @teamId, @phoneNumber, @email, @post, 0, @phoneNumber) 
 go
 
 create procedure InsertTeam
@@ -195,4 +196,15 @@ create procedure IsLeader
 @id int
 as
 select * from Teams where LeaderId=@id
+go
+
+alter procedure TeamNameAndMembersByWorkerId
+@id int
+as
+declare @teamId int
+set @teamId = (select [TeamId] from [Worker] where id=@id)
+
+select W.Id, W.Name, W.PhoneNumber,W.Email,T.Name as TeamName,T.LeaderId from Worker as W
+join Teams as T on T.Id=W.TeamId
+where TeamId=@teamId 
 go

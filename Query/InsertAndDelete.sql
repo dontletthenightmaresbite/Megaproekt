@@ -40,11 +40,11 @@ exec InsertPost 'Тимлид', 60000, 8
 exec InsertPost 'Дизайнер', 50000, 8
 exec InsertPost 'Программист', 50000, 8
 
-exec InsertWorker 'Director', null, '+79211111111', 1
-exec InsertWorker 'Leader', 1, '+79212222222', 2
-exec InsertWorker 'Diz1', 1, '+79213333333', 3
-exec InsertWorker 'Diz2', 1, '+79214444444', 3
-exec InsertWorker 'Prog1', 1, '+79215555555', 4
+exec InsertWorker 'Director', null, '+79211111111', 'first@mail.ru', 1
+exec InsertWorker 'Leader', 1, '+79212222222', 'second@mail.ru', 2
+exec InsertWorker 'Diz1', 1, '+79213333333', 'third@mail.ru', 3
+exec InsertWorker 'Diz2', 1, '+79214444444', 'fourth@mail.ru', 3
+exec InsertWorker 'Prog1', 1, '+79215555555', 'fifth@mail.ru', 4
 
 
 --#################################################################### DELETE ####################################################################--

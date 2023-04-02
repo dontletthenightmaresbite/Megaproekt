@@ -96,6 +96,14 @@ a.bi:hover {
     transition-duration: 300ms;
     color: var(--button-text-color-active);
 }
+#copy-mail {
+    position:relative;
+    top:10px;
+}
+
+/* .hidden {
+    display: none;
+} */
 
 @media (max-width: 1450px) {
     .team-wrapper {

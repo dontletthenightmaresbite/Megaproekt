@@ -36,3 +36,7 @@ class WorkerRepository(Repository):
     def is_leader(self, id):
         query = self.options.is_leader + f" {id}"
         return self.get(query)
+
+    def team_name_and_members_by_worker_id(self, id):
+        query = self.options.team_name_and_members_by_worker_id + f" {id}"
+        return self.get(query)

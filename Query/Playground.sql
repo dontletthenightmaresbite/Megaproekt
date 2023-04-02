@@ -11,3 +11,4 @@ exec ChangeTeamLeader 1,  2
 exec IsLeader 2
 exec WorkerPasswordByPhoneNumber '+79212222222'
 exec UpdateWorkerPassword '+79212222222', '456789'
+exec TeamNameAndMembersByWorkerId 3

@@ -43,7 +43,16 @@ def tasks(request):
 
 def team(request):
     if request.session.get('userr',0):
-        return render(request, 'Miniproekt/team.html', )
+        user = request.session['userr']
+        team = WorkerRepository().team_name_and_members_by_worker_id(user[0])
+        for x in range(len(team)):
+            team[x][-1] = team[x][0]==team[x][-1]
+        teamName = team[0][-2]
+        data = {
+            'teamName': teamName,
+            'members': team,
+        }
+        return render(request, 'Miniproekt/team.html', data)
     return redirect('login')
 
 def logout(request):
