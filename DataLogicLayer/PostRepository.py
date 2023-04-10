@@ -10,3 +10,11 @@ class PostRepository(Repository):
     def DeletePost(self, Id):
         query = self.options.delete_post+ f"'{Id}'"
         self.do(query)
+
+    def GetPostName(self,id):
+        query = self.options.get_post_name + f"'{id}'"
+        return self.get(query)
+
+    def GetPostSalary(self,id):
+        query = self.options.get_post_salary + f"'{id}'"
+        return self.get(query)

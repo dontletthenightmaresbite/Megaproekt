@@ -13,6 +13,14 @@ class WorkerRepository(Repository):
         query = self.options.get_full_info_of_worker_by_id + f" {id}"
         return self.get(query)
 
+    def Get_Worker_Post(self, id):
+        query = self.options.get_worker_post + f" {id}"
+        return self.get(query)
+
+    def Get_Worker_Salary(self, id):
+        query = self.options.get_worker_salary + f" {id}"
+        return self.get(query)
+
     def update_worker_team(self, workerId, teamId):
         query = self.options.update_worker_team + f" {workerId}, {teamId}"
         self.do(query)

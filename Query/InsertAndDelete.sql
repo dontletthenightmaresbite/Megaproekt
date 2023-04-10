@@ -46,6 +46,10 @@ exec InsertWorker 'Diz1', 1, '+79213333333', 'third@mail.ru', 3
 exec InsertWorker 'Diz2', 1, '+79214444444', 'fourth@mail.ru', 3
 exec InsertWorker 'Prog1', 1, '+79215555555', 'fifth@mail.ru', 4
 
+exec insertOpportunity 2,2
+exec InsertOpportunityInListOfOpportunities '”правл€ть людишками'
+
+exec GetWorkerPost 7
 
 --#################################################################### DELETE ####################################################################--
 

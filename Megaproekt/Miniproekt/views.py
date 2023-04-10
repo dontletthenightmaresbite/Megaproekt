@@ -3,13 +3,15 @@ from django.contrib import messages
 import os, sys
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from DataLogicLayer.WorkerRepository import *
+from  DataLogicLayer.OpportunityRepository import *
+from  DataLogicLayer.PostRepository import *
 # Create your views here.
 
 def login(request):
     if request.method == 'POST':
         phoneNumber = request.POST["username"]
         password = request.POST["password"]
-        request.session.setdefault('userr','')
+        #request.session.setdefault('userr','')
         # if True or password=='123456':
         idAndPass = WorkerRepository().worker_password_and_id_by_phone_number(phoneNumber)
         if idAndPass and password == idAndPass[0].Password:
@@ -27,7 +29,16 @@ def main(request):
         def __init__(self, desc):
             self.desc = desc
     if request.session.get('userr',0):
-        data = {"duties":[duty('Писать хороший код'), duty("Не писать плохой код"), duty("Не игнорировать беседу проекта"),duty("Слушать максима")],"post":"Программист","salary":"85000"}
+        user = request.session['userr']
+        opportunities = OpportunityRepository().get_worker_opportunities(user[0])
+        printOpportunities = []
+        for i in opportunities:
+            printOpportunities.append(i[2])
+        workerPost = WorkerRepository().Get_Worker_Post(user[0])[0][0]
+        postName = PostRepository().GetPostName(workerPost)[0][0]
+        workerSalary = PostRepository().GetPostSalary(workerPost)[0][0]
+        print(workerSalary,postName)
+        data = {"duties":printOpportunities,"post":postName,"salary":workerSalary}
         return render(request, 'Miniproekt/main.html',data)
     return redirect('login')
 

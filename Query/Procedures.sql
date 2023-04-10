@@ -26,6 +26,27 @@ select * from [Worker] as W
 where W.[Id] = @id
 go
 
+create procedure GetWorkerpost
+@id int
+as
+select Worker.Post from Worker
+where Worker.[Id] = @id
+go
+
+create procedure GetPostName
+@id int
+as
+select Posts.[Name] from Posts
+where Posts.[Id] = @id
+go
+
+create procedure GetPostSalary
+@id int
+as
+select Posts.[Salary] from Posts
+where Posts.[Id] = @id
+go
+
 create procedure TasksByWorkerId
 @id int
 as

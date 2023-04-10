@@ -8,6 +8,9 @@ class Options:
         self.insert_opportunity_in_list_of_opportunities = 'exec InsertOpportunityInListOfOpportunities'
         self.insert_opportunity = 'exec InsertOpportunity'
         #Get
+        self.get_post_salary = 'exec GetPostSalary'
+        self.get_post_name = 'exec GetPostName'
+        self.get_worker_post = 'exec GetWorkerpost'
         self.get_team_tasks = 'exec GetTeamTasks'
         self.get_worker_opportunities = 'exec GetWorkerOpportunities'
         self.get_full_info_of_worker_by_id = 'exec GetFullInfoOfWorkerById'
