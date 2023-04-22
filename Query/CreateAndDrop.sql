@@ -14,7 +14,8 @@ CREATE TABLE [Worker] (
 	Email nvarchar(50),
 	Post int NOT NULL,
 	IsDeleted bit,
-	Password nvarchar(15)
+	Password nvarchar(15),
+	WorkedTime nvarchar(30)
 )
 GO
 CREATE TABLE [Posts] (

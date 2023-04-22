@@ -20,7 +20,12 @@ class WorkerRepository(Repository):
     def Get_Worker_Salary(self, id):
         query = self.options.get_worker_salary + f" {id}"
         return self.get(query)
-
+    def Get_Worked_Time(self, id):
+        query = self.options.get_worked_time + f" {id}"
+        return self.get(query)
+    def Update_Worked_Time(self,id,time):
+        query = self.options.update_worker_time + f" {id},'{time}'"
+        self.do(query)
     def update_worker_team(self, workerId, teamId):
         query = self.options.update_worker_team + f" {workerId}, {teamId}"
         self.do(query)

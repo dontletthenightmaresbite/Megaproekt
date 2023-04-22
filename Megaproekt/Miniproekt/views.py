@@ -5,6 +5,7 @@ sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from DataLogicLayer.WorkerRepository import *
 from  DataLogicLayer.OpportunityRepository import *
 from  DataLogicLayer.PostRepository import *
+from time import *
 # Create your views here.
 
 def login(request):
@@ -37,8 +38,37 @@ def main(request):
         workerPost = WorkerRepository().Get_Worker_Post(user[0])[0][0]
         postName = PostRepository().GetPostName(workerPost)[0][0]
         workerSalary = PostRepository().GetPostSalary(workerPost)[0][0]
-        print(workerSalary,postName)
-        data = {"duties":printOpportunities,"post":postName,"salary":workerSalary}
+        if request.method == 'POST' and status == 'начать работу':
+            timeOfStart = time() // 1
+            status = 'завершить работу'
+        elif request.method == 'POST' and status == 'завершить работу':
+            timeOfend = time() // 1
+            workedtime =timeOfend - timeOfStart
+            hours=int(workedtime//3600)
+            workedtime%=3600
+            minutes = int(workedtime//60)
+            workedtime%=60
+            status = 'начать работу'
+            workertime = str(WorkerRepository().Get_Worked_Time(user[0]))[3:11]
+            hours+= int(workertime[0])*10+int(workertime[1])
+            minutes+= int(workertime[3])*10+int(workertime[4])
+            sec = int(workedtime)+int(workertime[6])*10+int(workertime[7])
+            newWorkedTime = ''
+            if len(str(hours))==1:
+                newWorkedTime='0'+str(hours)+':'
+            else:
+                newWorkedTime = str(hours)+':'
+            if len(str(minutes))==1:
+                newWorkedTime = newWorkedTime+'0'+str(minutes)+':'
+            else:
+                newWorkedTime = newWorkedTime + str(minutes) + ':'
+            if len(str(sec))==1:
+                newWorkedTime= newWorkedTime + '0'+str(sec)
+            else:
+                newWorkedTime = newWorkedTime + str(sec)
+            print(newWorkedTime)
+            WorkerRepository().Update_Worked_Time(user[0],newWorkedTime)
+        data = {"duties": printOpportunities, "post": postName, "salary": workerSalary, "status": status}
         return render(request, 'Miniproekt/main.html',data)
     return redirect('login')
 

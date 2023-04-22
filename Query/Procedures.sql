@@ -59,9 +59,10 @@ create procedure InsertWorker
 @teamId int NULL,
 @phoneNumber nvarchar(50),
 @email nvarchar(50),
-@post int
+@post int,
+@WorkedTime nvarchar(30)
 as
-insert [Worker] values (@name, @teamId, @phoneNumber, @email, @post, 0, @phoneNumber) 
+insert [Worker] values (@name, @teamId, @phoneNumber, @email, @post, 0, @phoneNumber,@WorkedTime) 
 go
 
 create procedure InsertTeam
@@ -211,6 +212,22 @@ as
 update Worker
 set Password=@password
 where PhoneNumber=@phoneNumber
+go
+
+create procedure UpdateWorkedTime
+@workerId int,
+@workedTime nvarchar(30)
+as
+update Worker
+set WorkedTime = @workedTime
+where Id=@workerId
+go
+
+create procedure GetWorkedTime
+@workerId int
+as
+select Worker.WorkedTime from Worker
+where Worker.Id=@workerId
 go
 
 create procedure IsLeader

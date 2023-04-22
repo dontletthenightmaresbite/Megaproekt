@@ -8,6 +8,7 @@ class Options:
         self.insert_opportunity_in_list_of_opportunities = 'exec InsertOpportunityInListOfOpportunities'
         self.insert_opportunity = 'exec InsertOpportunity'
         #Get
+        self.get_worked_time = 'exec GetWorkedTime'
         self.get_post_salary = 'exec GetPostSalary'
         self.get_post_name = 'exec GetPostName'
         self.get_worker_post = 'exec GetWorkerpost'
@@ -19,6 +20,7 @@ class Options:
         self.is_leader = 'exec IsLeader'
         self.team_name_and_members_by_worker_id = 'exec TeamNameAndMembersByWorkerId'
         #ChangeAbob
+        self.update_worker_time = 'exec [dbo].[UpdateWorkedTime]'
         self.delete_post = 'exec DeletePost'
         self.update_worker_team = 'exec UpdateWorkerTeam'
         self.update_task_worker = 'exec UpdateTaskWorker'

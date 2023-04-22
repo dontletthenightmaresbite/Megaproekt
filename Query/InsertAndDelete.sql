@@ -40,17 +40,17 @@ exec InsertPost 'Тимлид', 60000, 8
 exec InsertPost 'Дизайнер', 50000, 8
 exec InsertPost 'Программист', 50000, 8
 
-exec InsertWorker 'Director', null, '+79211111111', 'first@mail.ru', 1
-exec InsertWorker 'Leader', 1, '+79212222222', 'second@mail.ru', 2
-exec InsertWorker 'Diz1', 1, '+79213333333', 'third@mail.ru', 3
-exec InsertWorker 'Diz2', 1, '+79214444444', 'fourth@mail.ru', 3
-exec InsertWorker 'Prog1', 1, '+79215555555', 'fifth@mail.ru', 4
+exec InsertWorker 'Director', null, '+79211111111', 'first@mail.ru', 1, '00:00:00'
+exec InsertWorker 'Leader', 1, '+79212222222', 'second@mail.ru', 2, '00:00:00'
+exec InsertWorker 'Diz1', 1, '+79213333333', 'third@mail.ru', 3, '00:00:00'
+exec InsertWorker 'Diz2', 1, '+79214444444', 'fourth@mail.ru', 3, '00:00:00'
+exec InsertWorker 'Prog1', 1, '+79215555555', 'fifth@mail.ru', 4, '00:00:00'
 
 exec insertOpportunity 2,2
 exec InsertOpportunityInListOfOpportunities 'Управлять людишками'
 
-exec GetWorkerPost 7
-
+exec GetWorkerPost 7 
+exec [dbo].[UpdateWorkedTime] 2, '00:00:00'
 --#################################################################### DELETE ####################################################################--
 
 delete [ListOfOpportunities]
