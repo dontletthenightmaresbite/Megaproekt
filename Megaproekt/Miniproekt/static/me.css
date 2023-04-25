@@ -56,19 +56,27 @@
     
 }
 
-.logout-wraper {
+.logout-wrapper {
     position: fixed;
     width: 15vw;
     height: 3vw;
     margin: 2vh;
     top:0;
     right:0;
-    font-size: 2vh;
+}
+.pass-wrapper {
+    position: fixed;
+    width: 15vw;
+    height: 3vw;
+    margin: 2vh;
+    top:4vw;
+    right:0;
 }
 .logout {
     /* display: block; */
     list-style: none;
     height:100%;
     background-color: aqua;
+    font-size: 2vh;
     
 }

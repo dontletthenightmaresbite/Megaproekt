@@ -109,3 +109,27 @@ def me(request):
         data = {'us':request.session.get('userr',-1)}
         return render(request, 'Miniproekt/me.html', data)
     return redirect('login')
+
+def changePassword(request):
+    if request.session.get('userr',0):
+        if request.method == "POST":
+            old = (request.POST["old"]==request.session['userr'][2])
+            new = request.POST['new']
+            newAgain = request.POST['newAgain']
+            if old and (new == newAgain) and "'" not in new:# and ("'" not in new):
+                WorkerRepository().update_worker_password(request.session['userr'][1], new)
+                request.session['userr'] = [request.session['userr'][0],request.session['userr'][1],new]
+                return redirect('main')
+            elif not old:
+                messages.info(request, "Неправильный старый пароль!")
+                return redirect('changepass')
+            elif new != newAgain:
+                messages.info(request, "Новые пароли не сходятся!")
+                return redirect('changepass')
+            else:
+                messages.info(request, "Пароль содержит недопустимые символы!")
+                return redirect('changepass')
+        else:
+            return render(request, 'Miniproekt/changePassword.html', {'us':request.session['userr']})
+    print('\n\n\n\n\n\n\n\nчто-то не так!')
+    return redirect('changepass')

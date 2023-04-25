@@ -17,13 +17,20 @@ https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.min.css
 <body>
     <h1 class="h1">Основная информация</h1>
     {{us}}
-    <div class="logout-wraper">
+    <div class="logout-wrapper">
     <ul class="logout">
-      <a href="/logout" class="logout"><li class="logout">
-        <i class="bi bi-box-arrow-right"></i><span class="logout">LOGOUT</span>
+      <a href="/logout/" class="logout"><li class="logout">
+        <i class="bi bi-box-arrow-right"></i><span class="logout">Выйти</span>
       </li></a>
     </ul>
-  </div>
+    </div>
+    <div class="pass-wrapper">
+      <ul class="logout">
+        <a href="/changePassword/" class="logout"><li class="logout">
+          <i class="bi bi-lock"></i><span class="logout">Сменить пароль</span>
+        </li></a>
+      </ul>
+      </div>
     <div class="field-wrapper">
 
       {% for i in data %}
