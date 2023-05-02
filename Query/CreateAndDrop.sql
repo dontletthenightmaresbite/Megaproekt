@@ -96,6 +96,8 @@ GO
 
 --#################################################################### DATABASE DROP ####################################################################--
 
+use uwu
+
 ALTER TABLE [Tasks] DROP CONSTRAINT [Tasks_fk1]
 ALTER TABLE [Tasks] DROP CONSTRAINT [Tasks_fk0]
 ALTER TABLE [Teams] DROP CONSTRAINT [Teams_fk0]
@@ -110,3 +112,6 @@ DROP TABLE [Posts]
 DROP TABLE [ListOfOpportunities]
 DROP TABLE [Teams]
 DROP TABLE [Tasks]
+go
+use master
+drop database UwU

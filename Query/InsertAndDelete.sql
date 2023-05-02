@@ -51,6 +51,8 @@ exec InsertOpportunityInListOfOpportunities '”правл€ть людишками'
 
 exec GetWorkerPost 7 
 exec [dbo].[UpdateWorkedTime] 2, '00:00:00'
+
+exec InsertTask 'asdasdasfasdfs', 4, '2023-02-22'
 --#################################################################### DELETE ####################################################################--
 
 delete [ListOfOpportunities]

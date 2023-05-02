@@ -8,11 +8,12 @@
     font-size: 50px;
 }
 .beginning-button{
-    margin-left: 40%;
+    margin-left: auto;
+    margin-right: auto;
     height: 500px;
     width: 500px;
-    background-color: #FFFFFF;
-    border-radius: 25px;
+    background-color: #F3331F;
+    border-radius: 15px;
     display:flex;
 }
 .beginning-button span{

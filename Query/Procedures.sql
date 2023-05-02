@@ -47,14 +47,14 @@ select Posts.[Salary] from Posts
 where Posts.[Id] = @id
 go
 
-create procedure TasksByWorkerId
+alter procedure TasksByWorkerId
 @id int
 as
-select T.[Id], T.[Description] from [Tasks] as T
+select T.[Id], T.[Description],T.Deadline from [Tasks] as T
 where T.[WorkerId] = @id
 go
 
-create procedure InsertWorker
+alter procedure InsertWorker
 @name nvarchar(50),
 @teamId int NULL,
 @phoneNumber nvarchar(50),

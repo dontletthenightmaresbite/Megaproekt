@@ -3,6 +3,7 @@ from django.contrib import messages
 import os, sys
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from DataLogicLayer.WorkerRepository import *
+from DataLogicLayer.TaskRepository import *
 from  DataLogicLayer.OpportunityRepository import *
 from  DataLogicLayer.PostRepository import *
 from time import *
@@ -12,8 +13,6 @@ def login(request):
     if request.method == 'POST':
         phoneNumber = request.POST["username"]
         password = request.POST["password"]
-        #request.session.setdefault('userr','')
-        # if True or password=='123456':
         idAndPass = WorkerRepository().worker_password_and_id_by_phone_number(phoneNumber)
         if idAndPass and password == idAndPass[0].Password:
             request.session['userr'] = [idAndPass[0].Id,phoneNumber,password]
@@ -26,11 +25,12 @@ def login(request):
 
 
 def main(request):
-    class duty:
-        def __init__(self, desc):
-            self.desc = desc
     if request.session.get('userr',0):
         user = request.session['userr']
+        if not request.session.get('status',0):
+            request.session['status'] = ['начать работу',0]
+            # status = 'начать работу'
+
         opportunities = OpportunityRepository().get_worker_opportunities(user[0])
         printOpportunities = []
         for i in opportunities:
@@ -38,17 +38,24 @@ def main(request):
         workerPost = WorkerRepository().Get_Worker_Post(user[0])[0][0]
         postName = PostRepository().GetPostName(workerPost)[0][0]
         workerSalary = PostRepository().GetPostSalary(workerPost)[0][0]
-        if request.method == 'POST' and status == 'начать работу':
+        # print(status)
+        if request.method == 'POST' and request.session['status'][0] == 'начать работу':
             timeOfStart = time() // 1
-            status = 'завершить работу'
-        elif request.method == 'POST' and status == 'завершить работу':
+            # status = 'завершить работу'
+            request.session['status'] = ['завершить работу',time() // 1]
+            # print(status)
+        elif request.method == 'POST' and request.session['status'][0] == 'завершить работу':
+            timeOfStart = request.session['status'][1]
             timeOfend = time() // 1
+            print(timeOfend,timeOfStart)
             workedtime =timeOfend - timeOfStart
             hours=int(workedtime//3600)
             workedtime%=3600
             minutes = int(workedtime//60)
             workedtime%=60
-            status = 'начать работу'
+            request.session['status'] = ['начать работу', 0]
+            # status = 'начать работу'
+            # print(status)
             workertime = str(WorkerRepository().Get_Worked_Time(user[0]))[3:11]
             hours+= int(workertime[0])*10+int(workertime[1])
             minutes+= int(workertime[3])*10+int(workertime[4])
@@ -68,17 +75,20 @@ def main(request):
                 newWorkedTime = newWorkedTime + str(sec)
             print(newWorkedTime)
             WorkerRepository().Update_Worked_Time(user[0],newWorkedTime)
-        data = {"duties": printOpportunities, "post": postName, "salary": workerSalary, "status": status}
+            # data = {"duties": printOpportunities, "post": postName, "salary": workerSalary, "status": status}
+            # return render(request, 'Miniproekt/main.html', data)
+        data = {"duties": printOpportunities, "post": postName, "salary": workerSalary, "status": request.session['status'][0],'us': request.session['status']}
         return render(request, 'Miniproekt/main.html',data)
     return redirect('login')
 
 def tasks(request):
-    class task:
-        def __init__(self, desc, dl):
-            self.desc = desc
-            self.deadline = dl
+    # class task:
+    #     def __init__(self, desc, dl):
+    #         self.desc = desc
+    #         self.deadline = dl
     if request.session.get('userr',0):
-        data = {"data":[task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('afffffa',132)]}
+        # data = {"data":[task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('asasasa',132),task('afffffa',132)]}
+        data = {"tasks":TaskRepository().tasks_by_worker_id(request.session['userr'][0])}
         return render(request, 'Miniproekt/tasks.html', data)
     return redirect('login')
 
